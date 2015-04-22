@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7CA083E11AE83AB10061DE23 /* APIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CA083E01AE83AB10061DE23 /* APIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7CA083F81AE83AD40061DE23 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7CA083F71AE83AD40061DE23 /* Cartfile */; };
 		7CA083FB1AE83B260061DE23 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083FA1AE83B260061DE23 /* APIClient.swift */; };
 		7CA083FD1AE83B510061DE23 /* APITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083FC1AE83B510061DE23 /* APITypes.swift */; };
 		7CA084001AE83BD70061DE23 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA083FE1AE83BD70061DE23 /* Alamofire.framework */; };
@@ -153,7 +152,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CA083F81AE83AD40061DE23 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -251,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
