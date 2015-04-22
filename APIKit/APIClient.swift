@@ -67,7 +67,7 @@ public struct APIClient {
 /**
     Parses JSON using JSONParser
  */
-func parseJSONResponse<T, P: JSONParser where P.T == T>(json: JSON, parser: P) -> T? {
+public func parseJSONResponse<T, P: JSONParser where P.T == T>(json: JSON, parser: P) -> T? {
     if parser.isValid(json) {
         return parser.parseJSON(json)
     }
