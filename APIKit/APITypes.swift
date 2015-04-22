@@ -71,6 +71,26 @@ public struct APIRouteRequest: APIRoute {
     }
 }
 
+extension APIRouteRequest: Printable {
+    public var description: String {
+        var description: String = "\(method.rawValue) /\(path)\n"
+        
+        if let headers = additionalHeaders {
+            for (key, value) in headers {
+                description += "\(key): \(value)"
+            }
+            
+            description += "\n"
+        }
+        
+        if let parameters = parameters {
+            description += "\(parameters)"
+        }
+        
+        return description
+    }
+}
+
 /**
     Provides automatic URL request serialization with a provided url and APIRoute
  */
