@@ -18,7 +18,7 @@ public struct APIClient {
         return Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
     }()
     
-    public static func request(url: NSURL, route: APIRoute) -> Alamofire.Request? {
+    public static func request(url: NSURL, route: APIRoute) -> Alamofire.Request {
         let requestConvertible = APIRequestConvertible(requestUrl: url, route: route)
         return request(requestConvertible)
     }
