@@ -86,7 +86,7 @@ extension Alamofire.Request {
     
     :returns: The request.
     */
-    internal func responseSwiftyJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
+    public func responseSwiftyJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
         return responseSwiftyJSON(queue: nil, options: NSJSONReadingOptions.AllowFragments, completionHandler: completionHandler)
     }
     
@@ -99,7 +99,7 @@ extension Alamofire.Request {
     
     :returns: The request.
     */
-    internal func responseSwiftyJSON(queue: dispatch_queue_t? = nil, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
+    public func responseSwiftyJSON(queue: dispatch_queue_t? = nil, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
         
         return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
             
@@ -114,7 +114,7 @@ extension Alamofire.Request {
         })
     }
     
-    internal func responseJSONParser<T, P: JSONParser where T == P.T>(parser: P, completionHandler: (NSURLRequest, NSHTTPURLResponse?, T?, NSError?) -> Void) -> Self {
+    public func responseJSONParser<T, P: JSONParser where T == P.T>(parser: P, completionHandler: (NSURLRequest, NSHTTPURLResponse?, T?, NSError?) -> Void) -> Self {
         return responseSwiftyJSON({ request, response, json, error in
             completionHandler(request, response, parseJSONResponse(json, parser), error)
         })
