@@ -13,6 +13,7 @@ import SwiftyJSON
 public typealias JSON = SwiftyJSON.JSON
 public typealias APIRequestMethod = Alamofire.Method
 public typealias APIRequestParameterEncoding = Alamofire.ParameterEncoding
+public typealias APIRequestURLConvertible = Alamofire.URLRequestConvertible
 
 /**
     An API Route
@@ -48,7 +49,7 @@ public protocol APIRoute {
     Adds support for URLRequestConvertible within an APIRoute
  */
 public protocol APIRequest: APIRoute {
-    var requestConvertible: URLRequestConvertible? { get }
+    var requestConvertible: APIRequestURLConvertible? { get }
 }
 
 /**
@@ -73,7 +74,7 @@ public struct APIRouteRequest: APIRoute {
 /**
     Provides automatic URL request serialization with a provided url and APIRoute
  */
-public struct APIRequestConvertible: URLRequestConvertible {
+public struct APIRequestConvertible: APIRequestURLConvertible {
     let requestUrl: NSURL
     let route: APIRoute
     
