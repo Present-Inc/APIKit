@@ -49,7 +49,7 @@ public protocol APIRoute {
     Adds support for URLRequestConvertible within an APIRoute
  */
 public protocol APIRequest: APIRoute {
-    var requestConvertible: APIRequestURLConvertible? { get }
+    var requestConvertible: APIRequestURLConvertible { get }
 }
 
 /**

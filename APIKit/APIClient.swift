@@ -20,26 +20,22 @@ public struct APIClient {
     
     public static func request(url: NSURL, route: APIRoute) -> Alamofire.Request? {
         let requestConvertible = APIRequestConvertible(requestUrl: url, route: route)
-        return self.request(requestConvertible)
+        return request(requestConvertible)
     }
     
-    public static func request(request: APIRequest) -> Alamofire.Request? {
+    public static func request(request: APIRequest) -> Alamofire.Request {
         return self.request(request.requestConvertible)
     }
     
-    public static func request(requestConvertible: URLRequestConvertible?) -> Alamofire.Request? {
-        if let requestConvertible = requestConvertible {
-            let request = APIClient()
-                .request(requestConvertible)
-                .validate(statusCode: acceptableStatusCodeRange)
-            
-            // TODO: Add a logger
-            println(request)
-            
-            return request
-        }
+    public static func request(requestConvertible: URLRequestConvertible) -> Alamofire.Request {
+        let request = APIClient()
+            .request(requestConvertible)
+            .validate(statusCode: acceptableStatusCodeRange)
         
-        return nil
+        // TODO: Add a logger
+        println(request)
+        
+        return request
     }
     
     public var manager: Alamofire.Manager
