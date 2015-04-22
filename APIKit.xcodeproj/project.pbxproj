@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7CA083E11AE83AB10061DE23 /* APIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CA083E01AE83AB10061DE23 /* APIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7CA083E71AE83AB10061DE23 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA083DB1AE83AB10061DE23 /* APIKit.framework */; };
-		7CA083EE1AE83AB10061DE23 /* APIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083ED1AE83AB10061DE23 /* APIKitTests.swift */; };
 		7CA083F81AE83AD40061DE23 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7CA083F71AE83AD40061DE23 /* Cartfile */; };
 		7CA083FB1AE83B260061DE23 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083FA1AE83B260061DE23 /* APIClient.swift */; };
 		7CA083FD1AE83B510061DE23 /* APITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083FC1AE83B510061DE23 /* APITypes.swift */; };
@@ -17,23 +15,10 @@
 		7CA084011AE83BD70061DE23 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA083FF1AE83BD70061DE23 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7CA083E81AE83AB10061DE23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7CA083D21AE83AB10061DE23 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7CA083DA1AE83AB10061DE23;
-			remoteInfo = APIKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		7CA083DB1AE83AB10061DE23 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA083DF1AE83AB10061DE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CA083E01AE83AB10061DE23 /* APIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKit.h; sourceTree = "<group>"; };
-		7CA083E61AE83AB10061DE23 /* APIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CA083EC1AE83AB10061DE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CA083ED1AE83AB10061DE23 /* APIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKitTests.swift; sourceTree = "<group>"; };
 		7CA083F71AE83AD40061DE23 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		7CA083FA1AE83B260061DE23 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7CA083FC1AE83B510061DE23 /* APITypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITypes.swift; sourceTree = "<group>"; };
@@ -51,14 +36,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CA083E31AE83AB10061DE23 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7CA083E71AE83AB10061DE23 /* APIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -66,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				7CA083DD1AE83AB10061DE23 /* APIKit */,
-				7CA083EA1AE83AB10061DE23 /* APIKitTests */,
 				7CA083DC1AE83AB10061DE23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				7CA083DB1AE83AB10061DE23 /* APIKit.framework */,
-				7CA083E61AE83AB10061DE23 /* APIKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,23 +72,6 @@
 			children = (
 				7CA083DF1AE83AB10061DE23 /* Info.plist */,
 				7CA083F71AE83AD40061DE23 /* Cartfile */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7CA083EA1AE83AB10061DE23 /* APIKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				7CA083ED1AE83AB10061DE23 /* APIKitTests.swift */,
-				7CA083EB1AE83AB10061DE23 /* Supporting Files */,
-			);
-			path = APIKitTests;
-			sourceTree = "<group>";
-		};
-		7CA083EB1AE83AB10061DE23 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7CA083EC1AE83AB10061DE23 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -159,24 +117,6 @@
 			productReference = 7CA083DB1AE83AB10061DE23 /* APIKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7CA083E51AE83AB10061DE23 /* APIKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7CA083F41AE83AB10061DE23 /* Build configuration list for PBXNativeTarget "APIKitTests" */;
-			buildPhases = (
-				7CA083E21AE83AB10061DE23 /* Sources */,
-				7CA083E31AE83AB10061DE23 /* Frameworks */,
-				7CA083E41AE83AB10061DE23 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7CA083E91AE83AB10061DE23 /* PBXTargetDependency */,
-			);
-			name = APIKitTests;
-			productName = APIKitTests;
-			productReference = 7CA083E61AE83AB10061DE23 /* APIKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,9 +127,6 @@
 				ORGANIZATIONNAME = "Present, Inc";
 				TargetAttributes = {
 					7CA083DA1AE83AB10061DE23 = {
-						CreatedOnToolsVersion = 6.3;
-					};
-					7CA083E51AE83AB10061DE23 = {
 						CreatedOnToolsVersion = 6.3;
 					};
 				};
@@ -207,7 +144,6 @@
 			projectRoot = "";
 			targets = (
 				7CA083DA1AE83AB10061DE23 /* APIKit */,
-				7CA083E51AE83AB10061DE23 /* APIKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,13 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA083F81AE83AD40061DE23 /* Cartfile in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7CA083E41AE83AB10061DE23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,23 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CA083E21AE83AB10061DE23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7CA083EE1AE83AB10061DE23 /* APIKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7CA083E91AE83AB10061DE23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7CA083DA1AE83AB10061DE23 /* APIKit */;
-			targetProxy = 7CA083E81AE83AB10061DE23 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7CA083EF1AE83AB10061DE23 /* Debug */ = {
@@ -389,36 +302,6 @@
 			};
 			name = Release;
 		};
-		7CA083F51AE83AB10061DE23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = APIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		7CA083F61AE83AB10061DE23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = APIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,14 +319,6 @@
 			buildConfigurations = (
 				7CA083F21AE83AB10061DE23 /* Debug */,
 				7CA083F31AE83AB10061DE23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		7CA083F41AE83AB10061DE23 /* Build configuration list for PBXNativeTarget "APIKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7CA083F51AE83AB10061DE23 /* Debug */,
-				7CA083F61AE83AB10061DE23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
