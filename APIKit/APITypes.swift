@@ -11,8 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 public typealias JSON = SwiftyJSON.JSON
-public typealias RequestMethod = Alamofire.Method
-public typealias RequestParameterEncoding = Alamofire.ParameterEncoding
+public typealias APIRequestMethod = Alamofire.Method
+public typealias APIRequestParameterEncoding = Alamofire.ParameterEncoding
 
 /**
     An API Route
@@ -21,12 +21,12 @@ public protocol APIRoute {
     /**
         The HTTP Method for the route.
     */
-    var method: RequestMethod { get }
+    var method: APIRequestMethod { get }
     
     /**
         The encoding to use for parameters.
     */
-    var encoding: RequestParameterEncoding { get }
+    var encoding: APIRequestParameterEncoding { get }
     
     /**
         The path of the route.
@@ -55,13 +55,13 @@ public protocol APIRequest: APIRoute {
     Struct which represents a request to an APIRoute
  */
 public struct APIRouteRequest: APIRoute {
-    public var method: RequestMethod
-    public var encoding: RequestParameterEncoding
+    public var method: APIRequestMethod
+    public var encoding: APIRequestParameterEncoding
     public var path: String
     public var parameters: [String: AnyObject]?
     public var additionalHeaders: [String: String]?
     
-    public init(method: RequestMethod, encoding: RequestParameterEncoding, path: String, parameters: [String: AnyObject]? = nil, additionalHeaders: [String: String]? = nil) {
+    public init(method: APIRequestMethod, encoding: APIRequestParameterEncoding, path: String, parameters: [String: AnyObject]? = nil, additionalHeaders: [String: String]? = nil) {
         self.method = method
         self.encoding = encoding
         self.path = path
