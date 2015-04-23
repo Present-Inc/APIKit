@@ -12,6 +12,7 @@
 		7CA083FD1AE83B510061DE23 /* APITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA083FC1AE83B510061DE23 /* APITypes.swift */; };
 		7CA084001AE83BD70061DE23 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA083FE1AE83BD70061DE23 /* Alamofire.framework */; };
 		7CA084011AE83BD70061DE23 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA083FF1AE83BD70061DE23 /* SwiftyJSON.framework */; };
+		7CA084051AE857B30061DE23 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA084041AE857B30061DE23 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7CA083FC1AE83B510061DE23 /* APITypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITypes.swift; sourceTree = "<group>"; };
 		7CA083FE1AE83BD70061DE23 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		7CA083FF1AE83BD70061DE23 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
+		7CA084041AE857B30061DE23 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA084051AE857B30061DE23 /* Result.framework in Frameworks */,
 				7CA084011AE83BD70061DE23 /* SwiftyJSON.framework in Frameworks */,
 				7CA084001AE83BD70061DE23 /* Alamofire.framework in Frameworks */,
 			);
@@ -78,6 +81,7 @@
 		7CA083F91AE83B180061DE23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CA084041AE857B30061DE23 /* Result.framework */,
 				7CA083FE1AE83BD70061DE23 /* Alamofire.framework */,
 				7CA083FF1AE83BD70061DE23 /* SwiftyJSON.framework */,
 			);
@@ -319,6 +323,7 @@
 				7CA083F31AE83AB10061DE23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

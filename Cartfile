@@ -1,2 +1,4 @@
 github "Alamofire/Alamofire"
 github "SwiftyJSON/SwiftyJSON" "xcode6.3"
+
+github "antitypical/Result"
