@@ -46,7 +46,7 @@ public protocol APIRoute {
 }
 
 /**
-    Adds support for URLRequestConvertible within an APIRoute
+    Adds support for APIRequestURLConvertible within an APIRoute
  */
 public protocol APIRequest: APIRoute {
     var requestConvertible: APIRequestURLConvertible { get }
@@ -106,7 +106,6 @@ public struct APIRequestConvertible: APIRequestURLConvertible {
     public var URLRequest: NSURLRequest {
         let url = requestUrl.URLByAppendingPathComponent(route.path)
         
-        // Create a request with `requestUrl`, returning cached data if available, with a 15 second timeout.
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = route.method.rawValue
         

@@ -24,8 +24,6 @@ extension Alamofire.Manager {
 public struct APIClient {
     public static var acceptableStatusCodeRange: Range<Int> = 200..<400
     
-    public static var cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-    
     public static var sharedHeaders: [NSObject: AnyObject] = {
         return Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
     }()
@@ -50,19 +48,19 @@ public struct APIClient {
     
     public var manager: Alamofire.Manager
     
-    public init(sessionConfiguration: NSURLSessionConfiguration? = NSURLSessionConfiguration.defaultSessionConfiguration()) {
+    public init(sessionConfiguration: NSURLSessionConfiguration) {
         manager = Alamofire.Manager(configuration: sessionConfiguration)
     }
     
     public init() {
-        self.init(headers: APIClient.sharedHeaders, cookiePolicy: .Always)
+        self.init(headers: APIClient.sharedHeaders,  cookiePolicy: .Always)
     }
     
-    public init(headers: [NSObject: AnyObject], cookiePolicy: NSHTTPCookieAcceptPolicy) {
+    public init(headers: [NSObject: AnyObject], cookiePolicy: NSHTTPCookieAcceptPolicy, cookieStorage: NSHTTPCookieStorage? = nil) {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.HTTPAdditionalHeaders = headers
         configuration.HTTPCookieAcceptPolicy = cookiePolicy
-        configuration.HTTPCookieStorage = APIClient.cookieStore
+        configuration.HTTPCookieStorage = cookieStorage
         
         self.init(sessionConfiguration: configuration)
         
@@ -70,6 +68,14 @@ public struct APIClient {
     
     public func request(requestConvertible: URLRequestConvertible) -> Alamofire.Request {
         return manager.request(requestConvertible)
+    }
+    
+    public func request(url: NSURL, route: APIRoute) -> Alamofire.Request {
+        return manager.request(url, route: route)
+    }
+    
+    public func request(request: APIRequest) -> Alamofire.Request {
+        return manager.request(request)
     }
 }
 
@@ -80,7 +86,7 @@ public struct APIClient {
  */
 public func parseJSONResponse<T, P: JSONParser where P.T == T>(json: JSON, parser: P) -> Result<T, NSError> {
     if parser.isValid(json) {
-        return Result<T, NSError>.success(parser.parseJSON(json))
+        return Result.success(parser.parseJSON(json))
     }
     
     let error = NSError(domain: "tv.present.APIKit.parseJSONResponse", code: -1, userInfo: [
@@ -90,7 +96,7 @@ public func parseJSONResponse<T, P: JSONParser where P.T == T>(json: JSON, parse
     return Result.failure(error)
 }
 
-// MARK: - Serializer for Swifty JSON
+// MARK: - Response serializers
 
 extension Alamofire.Request {
     /**
@@ -168,7 +174,7 @@ extension Alamofire.Request {
             if let value = result.value {
                 completionHandler(parseJSONResponse(value, parser))
             } else if let error = result.error {
-                completionHandler(Result<T, NSError>.failure(error))
+                completionHandler(Result.failure(error))
             }
         })
     }
